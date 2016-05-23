@@ -16,7 +16,7 @@ class server_secret_key_required(object):
       if self.validation_funct(auth)==False:
         resp = Response("")
         resp.status_code=401
-        resp.headers['WWW-Authentication'] = 'Basic realm="Server communication"'
+        resp.headers['WWW-Authenticate'] = 'Basic realm="Server communication"'
         return resp
       return f(*args,**kwargs)
     return decorated_function
